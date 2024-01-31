@@ -5,6 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(CharacterController))]
 public class FPSController : MonoBehaviour
 {
+    public object playerFlashlight;
    public Camera playerCamera;
    public float walkSpeed = 6f;
    public float runSpeed = 12f;
