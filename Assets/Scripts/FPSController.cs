@@ -5,8 +5,9 @@ using UnityEngine;
 [RequireComponent(typeof(CharacterController))]
 public class FPSController : MonoBehaviour
 {
-    public object playerFlashlight;
+    public GameObject playerFlashlight;
    public Camera playerCamera;
+   public bool lightOn;
    public float walkSpeed = 6f;
    public float runSpeed = 12f;
    public float jumpPower = 7f;
@@ -27,6 +28,8 @@ public class FPSController : MonoBehaviour
     characterController = GetComponent<CharacterController>();
     Cursor.lockState = CursorLockMode.Locked;
     Cursor.visible = false;
+    lightOn = false;
+    playerFlashlight.SetActive(false);
    }
 
    void Update()
@@ -73,6 +76,22 @@ public class FPSController : MonoBehaviour
             transform.rotation *= Quaternion.Euler(0, Input.GetAxis("Mouse X") * lookSpeed, 0);
         }
  
+        #endregion
+
+        #region Handles Flashlight
+       if (Input.GetKeyDown("f"))
+       {
+        if(lightOn == true)
+        {
+            lightOn = false;
+            playerFlashlight.SetActive(false);
+        }
+        else if(lightOn == false)
+        {
+            lightOn = true;
+            playerFlashlight.SetActive(true);
+        }
+       }
         #endregion
     }
 }
