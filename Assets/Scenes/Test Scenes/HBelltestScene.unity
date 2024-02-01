@@ -2202,14 +2202,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 5572797552506856319, guid: ee69645da2b91a94b9d22d65645ac12d, type: 3}
-      propertyPath: m_Name
-      value: Flashlight
-      objectReference: {fileID: 0}
-    - target: {fileID: 7776624260468939847, guid: ee69645da2b91a94b9d22d65645ac12d, type: 3}
-      propertyPath: lightOn
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

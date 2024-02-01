@@ -5,34 +5,32 @@ using UnityEngine;
 [RequireComponent(typeof(CharacterController))]
 public class FPSController : MonoBehaviour
 {
-    public GameObject playerFlashlight;
-   public Camera playerCamera;
-   public bool lightOn;
-   public float walkSpeed = 6f;
-   public float runSpeed = 12f;
-   public float jumpPower = 7f;
-   public float gravity = 10f;
+    //public GameObject playerFlashlight;
+    public Camera playerCamera;
+    //public bool lightOn;
+    public float walkSpeed = 6f;
+    public float runSpeed = 12f;
+    public float jumpPower = 7f;
+    public float gravity = 10f;
 
-   public float lookSpeed = 2f;
-   public float lookXLimit = 45f;
+    public float lookSpeed = 2f;
+    public float lookXLimit = 45f;
 
-   Vector3 moveDirection = Vector3.zero;
-   float rotationX = 0;
+    Vector3 moveDirection = Vector3.zero;
+    float rotationX = 0;
 
-   public bool canMove = true;
+    public bool canMove = true;
 
-   CharacterController characterController;
+    CharacterController characterController;
 
-   void Start()
-   {
-    characterController = GetComponent<CharacterController>();
-    Cursor.lockState = CursorLockMode.Locked;
-    Cursor.visible = false;
-    lightOn = false;
-    playerFlashlight.SetActive(false);
-   }
+    void Start()
+    {
+        characterController = GetComponent<CharacterController>();
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+    }
 
-   void Update()
+    void Update()
     {
  
         #region Handles Movment
@@ -78,20 +76,20 @@ public class FPSController : MonoBehaviour
  
         #endregion
 
-        #region Handles Flashlight
-       if (Input.GetKeyDown("f"))
-       {
-        if(lightOn == true)
-        {
-            lightOn = false;
-            playerFlashlight.SetActive(false);
-        }
-        else if(lightOn == false)
-        {
-            lightOn = true;
-            playerFlashlight.SetActive(true);
-        }
-       }
-        #endregion
+    //     #region Handles Flashlight
+    //    if (Input.GetKeyDown("f"))
+    //    {
+    //     if(lightOn == true)
+    //     {
+    //         lightOn = false;
+    //         playerFlashlight.SetActive(false);
+    //     }
+    //     else if(lightOn == false)
+    //     {
+    //         lightOn = true;
+    //         playerFlashlight.SetActive(true);
+    //     }
+    //    }
+    //     #endregion
     }
 }
