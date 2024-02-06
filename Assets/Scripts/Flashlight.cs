@@ -19,6 +19,7 @@ public class Flashlight : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        #region Flashlight Drain
         m_light.intensity = Mathf.Clamp(m_light.intensity,minBrightness,maxBrightness);
         if(drainOverTime == true && m_light.enabled == true)
         {
@@ -31,6 +32,9 @@ public class Flashlight : MonoBehaviour
                 m_light.enabled = !m_light.enabled;
             }
         }
+        #endregion
+        
+        #region Flashlight Recharge
         if(drainOverTime == true && m_light.enabled == false)
         {
             if(Input.GetKey("r")){
@@ -41,12 +45,17 @@ public class Flashlight : MonoBehaviour
                 }
             }
         }
+        #endregion
+
+        #region Flashlight activiation
        if (Input.GetKeyDown("f"))
        {
         if (m_light.intensity > minBrightness){
             m_light.enabled = !m_light.enabled;
         }
        }
+       #endregion
+
     //    if (Input.GetKeyDown("r"))
     //    {
     //     ReplaceBattery(.3f);
