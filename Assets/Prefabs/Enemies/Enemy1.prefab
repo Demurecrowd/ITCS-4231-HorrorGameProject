@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 215325353783562377}
   - component: {fileID: 43982072594494169}
   - component: {fileID: 2344459984326172335}
+  - component: {fileID: 7201460686376453234}
   m_Layer: 0
   m_Name: Enemy1
   m_TagString: Untagged
@@ -108,6 +109,38 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &7201460686376453234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5009732322584480721}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26d80403d8f3e3c4380eed5eade885a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemy1AI: {fileID: 0}
+  destinations: []
+  aiAnim: {fileID: 0}
+  walkSpeed: 0
+  chaseSpeed: 0
+  minIdleTime: 0
+  maxIdleTime: 0
+  idleTime: 0
+  sightDistance: 0
+  catchDistance: 0
+  chaseTime: 0
+  minChaseTime: 0
+  maxChaseTime: 0
+  jumpscareTime: 0
+  walking: 0
+  chasing: 0
+  player: {fileID: 0}
+  destinationAmount: 0
+  rayCastOffset: {x: 0, y: 0, z: 0}
+  deathScene: 
 --- !u!1 &6653153297537563092
 GameObject:
   m_ObjectHideFlags: 0
