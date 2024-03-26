@@ -51,5 +51,6 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "ITCS-4231-HorrorGameProject.sln"
+    "dotnet.defaultSolution": "ITCS-4231-HorrorGameProject.sln",
+    "FSharp.suggestGitignore": false
 }

@@ -3,11 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.SceneManagement;
-using UnityEngine.PlayerLoop;
 
-public class EnemyOneAI : MonoBehaviour
+public class EnemyAI : MonoBehaviour
 {
-    public NavMeshAgent enemy1AI;
+    public NavMeshAgent ai;
     public List<Transform> destinations;
     public Animator aiAnim;
     public float walkSpeed, chaseSpeed, minIdleTime, maxIdleTime, idleTime, sightDistance, catchDistance, chaseTime, minChaseTime, maxChaseTime, jumpscareTime;
@@ -44,19 +43,19 @@ public class EnemyOneAI : MonoBehaviour
         if (chasing == true)
         {
             dest = player.position;
-            enemy1AI.destination = dest;
-            enemy1AI.speed = chaseSpeed;
+            ai.destination = dest;
+            ai.speed = chaseSpeed;
             aiAnim.ResetTrigger("walk");
             aiAnim.ResetTrigger("idle");
             aiAnim.SetTrigger("sprint");
-            float distance = Vector3.Distance(player.position, enemy1AI.transform.position);
+            float distance = Vector3.Distance(player.position, ai.transform.position);
             if (distance <= catchDistance)
             {
-                player.gameObject.SetActive(false);
                 aiAnim.ResetTrigger("walk");
                 aiAnim.ResetTrigger("idle");
                 aiAnim.ResetTrigger("sprint");
                 aiAnim.SetTrigger("jumpscare");
+                player.gameObject.SetActive(false);
                 StartCoroutine(deathRoutine());
                 chasing = false;
             }
@@ -64,17 +63,17 @@ public class EnemyOneAI : MonoBehaviour
         if (walking == true)
         {
             dest = currentDest.position;
-            enemy1AI.destination = dest;
-            enemy1AI.speed = walkSpeed;
+            ai.destination = dest;
+            ai.speed = walkSpeed;
             aiAnim.ResetTrigger("sprint");
             aiAnim.ResetTrigger("idle");
             aiAnim.SetTrigger("walk");
-            if  (enemy1AI.remainingDistance <= enemy1AI.stoppingDistance)
+            if (ai.remainingDistance <= ai.stoppingDistance)
             {
                 aiAnim.ResetTrigger("sprint");
                 aiAnim.ResetTrigger("walk");
                 aiAnim.SetTrigger("idle");
-                enemy1AI.speed = 0;
+                ai.speed = 0;
                 StopCoroutine("stayIdle");
                 StartCoroutine("stayIdle");
                 walking = false;
