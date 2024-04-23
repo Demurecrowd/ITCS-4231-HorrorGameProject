@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.SceneManagement;
-
 public class Enemy2AI : MonoBehaviour
 {
     public NavMeshAgent ai;
@@ -11,15 +10,14 @@ public class Enemy2AI : MonoBehaviour
     public Animator aiAnim;
     public Transform player;
     public float stoppingDistance = 0.1f, walkSpeed, catchDistance, jumpscareTime;
-    public int nodeNum = 0, delay = 3;
-    bool walking = true;
+    public int delay = 3;
+    private int nodeNum;
+    private bool walking = true;
     public string deathScene;
-
     void Start()
     {
         SetDestination();
     }
-
     void Update()
     {
         if (walking)
@@ -33,21 +31,20 @@ public class Enemy2AI : MonoBehaviour
             {
                 ai.destination = destinations[nodeNum].position;
                 ai.speed = walkSpeed;
-                aiAnim.ResetTrigger("idle");
                 aiAnim.SetTrigger("walk");
+                aiAnim.ResetTrigger("idle");
             }
         }
         float distance = Vector3.Distance(player.position, ai.transform.position);
             if (distance <= catchDistance)
             {
+                aiAnim.SetTrigger("jumpscare");
                 aiAnim.ResetTrigger("walk");
                 aiAnim.ResetTrigger("idle");
-                aiAnim.SetTrigger("jumpscare");
                 player.gameObject.SetActive(false);
                 StartCoroutine(DeathRoutine());
             }
     }
-
     void SetDestination()
     {
         if (nodeNum < destinations.Count)
@@ -63,8 +60,8 @@ public class Enemy2AI : MonoBehaviour
     IEnumerator IdleAfterDelay(float del)
     {
         walking = false;
-        aiAnim.ResetTrigger("walk");
         aiAnim.SetTrigger("idle");
+        aiAnim.ResetTrigger("walk");
         ai.speed = 0;
 
         yield return new WaitForSeconds(del);
@@ -75,13 +72,12 @@ public class Enemy2AI : MonoBehaviour
     }
     IEnumerator DeathRoutine()
     {
+        aiAnim.SetTrigger("jumpscare");
         aiAnim.ResetTrigger("walk");
         aiAnim.ResetTrigger("idle");
-        aiAnim.SetTrigger("jumpscare");
 
         yield return new WaitForSeconds(jumpscareTime);
         SceneManager.LoadScene(deathScene);
     }
-    
 }
 
