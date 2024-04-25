@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - EnemyDisappear
+  - Light
+  - lightSwitch
   layers:
   - Default
   - TransparentFX
