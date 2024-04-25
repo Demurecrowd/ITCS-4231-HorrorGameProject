@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class LightScript : MonoBehaviour
 {
-    public GameObject lightSwitch;
+    private GameObject lightSwitch;
     public GameObject lights;
-    public bool lightOn = false;
+    public GameObject light2;
+    private bool lightOn = false;
     
     // Start is called before the first frame update
     void Start()
@@ -21,6 +22,7 @@ public class LightScript : MonoBehaviour
         if(lightOn)
         {
             lights.SetActive(true);
+            light2.SetActive(true);
         }
     }
 }

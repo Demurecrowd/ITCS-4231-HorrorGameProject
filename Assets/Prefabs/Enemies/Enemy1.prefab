@@ -297,7 +297,7 @@ CapsuleCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.5
   m_Height: 2
@@ -323,22 +323,22 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   aiAnim: {fileID: 2302054116498472749}
-  walkSpeed: 2
-  chaseSpeed: 5
+  walkSpeed: 3
+  chaseSpeed: 7
   minIdleTime: 2
   maxIdleTime: 9
   idleTime: 0
-  sightDistance: 10
+  sightDistance: 18
   catchDistance: 3
   chaseTime: 0
-  minChaseTime: 10
-  maxChaseTime: 25
+  minChaseTime: 5
+  maxChaseTime: 10
   jumpscareTime: 2
   walking: 0
   chasing: 0
   player: {fileID: 0}
   destinationAmount: 6
-  rayCastOffset: {x: 0, y: 0, z: 0}
+  rayCastOffset: {x: 0.5, y: 0, z: 0}
   deathScene: EnemyTestScene1
 --- !u!195 &7919866150142769695
 NavMeshAgent:
