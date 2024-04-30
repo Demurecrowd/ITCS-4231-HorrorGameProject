@@ -10,6 +10,7 @@ public class Flashlight : MonoBehaviour
     public float minBrightness;
     public float drainRate;
     public float rechargeRate;
+    public GameObject ambientLight;
     // Start is called before the first frame update
     void Start()
     {
@@ -50,12 +51,17 @@ public class Flashlight : MonoBehaviour
         #region Flashlight activiation
         if (hasLight == true)
         {
+            ambientLight.SetActive(false);
             if (Input.GetKeyDown("f"))
             {
                 if (m_light.intensity > minBrightness){
                     m_light.enabled = !m_light.enabled;
                 }
             }
+        }
+        else if (hasLight == false)
+        {
+            ambientLight.SetActive(true);
         }
        #endregion
 

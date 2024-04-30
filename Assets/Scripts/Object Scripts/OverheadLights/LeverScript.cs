@@ -33,6 +33,7 @@ public class LeverScript : MonoBehaviour
     {
         if (inTrig)
         {
+            //show UI to press E
             if (Input.GetKeyDown(KeyCode.E))
             {
                 leverAnim.ResetTrigger("flip");
