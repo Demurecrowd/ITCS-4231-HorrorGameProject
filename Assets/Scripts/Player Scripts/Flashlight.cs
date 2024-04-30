@@ -5,7 +5,7 @@ using UnityEngine;
 public class Flashlight : MonoBehaviour
 {
     private Light m_light;
-    public bool drainOverTime;
+    public bool drainOverTime, hasLight = true;
     public float maxBrightness;
     public float minBrightness;
     public float drainRate;
@@ -48,12 +48,15 @@ public class Flashlight : MonoBehaviour
         #endregion
 
         #region Flashlight activiation
-       if (Input.GetKeyDown("f"))
-       {
-        if (m_light.intensity > minBrightness){
-            m_light.enabled = !m_light.enabled;
+        if (hasLight == true)
+        {
+            if (Input.GetKeyDown("f"))
+            {
+                if (m_light.intensity > minBrightness){
+                    m_light.enabled = !m_light.enabled;
+                }
+            }
         }
-       }
        #endregion
 
     //    if (Input.GetKeyDown("r"))
