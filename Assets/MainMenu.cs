@@ -32,7 +32,6 @@ public class MainMenu : MonoBehaviour
         }
     }
     
-    //Not yet working, should run on button click
     //Sets camera enable values to switch cameras to player, then redo cursor stuff
     public void PlayGame()
     {
@@ -40,7 +39,7 @@ public class MainMenu : MonoBehaviour
         playercam.enabled = true;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
-        
+        GameObject.Find("Canvas").GetComponent<Canvas>().enabled = false;
     }
 
 
