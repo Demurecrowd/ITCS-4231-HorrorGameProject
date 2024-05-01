@@ -21354,6 +21354,7 @@ GameObject:
   - component: {fileID: 945462282}
   - component: {fileID: 945462281}
   - component: {fileID: 945462280}
+  - component: {fileID: 945462283}
   m_Layer: 0
   m_Name: MenuCamera
   m_TagString: MainCamera
@@ -21428,13 +21429,34 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 945462279}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.20217873, y: -0.37202677, z: 0.08337952, w: 0.9020908}
-  m_LocalPosition: {x: 2.207, y: 2.703, z: -12.602}
+  m_LocalRotation: {x: 0.15243667, y: -0.15243667, z: 0.69048035, w: 0.69048035}
+  m_LocalPosition: {x: -0.05963986, y: 1.471, z: -10.221}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 25.265, y: -44.823, z: 0}
+  m_LocalEulerAnglesHint: {x: 24.899, y: 0, z: 90}
+--- !u!95 &945462283
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 945462279}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 24e1b8db3d38d6f48b40cd62a160be42, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &959833710
 GameObject:
   m_ObjectHideFlags: 0
