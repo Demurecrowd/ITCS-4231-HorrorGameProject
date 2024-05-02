@@ -5,14 +5,18 @@ using System.Runtime.CompilerServices;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class LeverScript : MonoBehaviour
+public class FlashLightPickupScript : MonoBehaviour
 {
-    public Animator leverAnim;
-    public GameObject lever;
+    public GameObject flashlight;
+    public GameObject playerlight;
     public bool inTrig;
     public bool oneTime;
 
 
+    private void Start()
+    {
+        playerlight.GetComponent<Flashlight>().hasLight = false;
+    }
      private void OnTriggerEnter(Collider other)
     {
         //Debug.Log("Entered Trigger");
@@ -22,10 +26,6 @@ public class LeverScript : MonoBehaviour
                 inTrig = true;
                 //Debug.Log("inTrig set to True");
             }
-            // else
-            // {
-            //     Debug.Log("oneTime is true");
-            // }
         }
         
     }
@@ -35,12 +35,12 @@ public class LeverScript : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
-                leverAnim.ResetTrigger("flip");
-                leverAnim.SetTrigger("flip");
+                //set flashlight in players hand as active and make players hand flashlight not possible to open before
                 //Debug.Log("Pressed E and Animation trigger set");
+                playerlight.GetComponent<Flashlight>().hasLight = true;
                 inTrig = false;
-                oneTime = true;  
-                //Make lights function
+                oneTime = true;
+                flashlight.SetActive(false);
             }
         }
     }

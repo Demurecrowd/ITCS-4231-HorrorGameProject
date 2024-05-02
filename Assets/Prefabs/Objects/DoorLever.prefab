@@ -210,7 +210,7 @@ GameObject:
   - component: {fileID: 6900678453793738198}
   - component: {fileID: 8162976213146923280}
   m_Layer: 0
-  m_Name: TestLeverInteraction
+  m_Name: DoorLever
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -267,10 +267,10 @@ GameObject:
   - component: {fileID: 238516814993641599}
   - component: {fileID: 5260924177116536165}
   - component: {fileID: 2842490525265823275}
-  - component: {fileID: 5676995291768402218}
+  - component: {fileID: 5496083081765211748}
   m_Layer: 0
   m_Name: InteractionBox
-  m_TagString: lightSwitch
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -283,13 +283,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8943907996153511045}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.867, y: 1.539, z: -0.057}
+  m_LocalRotation: {x: -0, y: -0, z: 0.25886643, w: 0.9659132}
+  m_LocalPosition: {x: -6.53, y: 0.59, z: -0.057}
   m_LocalScale: {x: 10.732812, y: 28.531235, z: 13.623038}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6900678453793738198}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 30.006}
 --- !u!33 &238516814993641599
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -361,7 +361,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &5676995291768402218
+--- !u!114 &5496083081765211748
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -370,10 +370,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 8943907996153511045}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3790768a08a8a8e40adeda313cae27d1, type: 3}
+  m_Script: {fileID: 11500000, guid: 15f04b0d1f665274089463e829ca3c6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   leverAnim: {fileID: 8162976213146923280}
   lever: {fileID: 8656006864895378070}
+  statue: {fileID: 0}
+  doorLeft: {fileID: 0}
+  doorRight: {fileID: 0}
+  doorClosed: {fileID: 0}
+  genLeverInteraction: {fileID: 0}
   inTrig: 0
   oneTime: 0
+  genOn: 0
