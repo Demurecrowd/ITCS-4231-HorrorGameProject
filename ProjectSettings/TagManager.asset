@@ -7,6 +7,8 @@ TagManager:
   - EnemyDisappear
   - Light
   - lightSwitch
+  - playButton
+  - Menu
   layers:
   - Default
   - TransparentFX

@@ -8126,7 +8126,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1285099448}
-        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
+        m_TargetAssemblyTypeName: MainMenuScript, Assembly-CSharp
         m_MethodName: PlayGame
         m_Mode: 1
         m_Arguments:
@@ -21353,8 +21353,8 @@ GameObject:
   m_Component:
   - component: {fileID: 945462282}
   - component: {fileID: 945462281}
-  - component: {fileID: 945462280}
   - component: {fileID: 945462283}
+  - component: {fileID: 945462284}
   m_Layer: 0
   m_Name: MenuCamera
   m_TagString: MainCamera
@@ -21362,14 +21362,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &945462280
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 945462279}
-  m_Enabled: 1
 --- !u!20 &945462281
 Camera:
   m_ObjectHideFlags: 0
@@ -21379,8 +21371,8 @@ Camera:
   m_GameObject: {fileID: 945462279}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -21403,7 +21395,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 90
+  field of view: 60
   orthographic: 0
   orthographic size: 5
   m_Depth: 0
@@ -21457,6 +21449,14 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!81 &945462284
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 945462279}
+  m_Enabled: 1
 --- !u!1 &959833710
 GameObject:
   m_ObjectHideFlags: 0
@@ -61972,7 +61972,7 @@ GameObject:
   - component: {fileID: 1285099448}
   m_Layer: 5
   m_Name: MainMenu
-  m_TagString: Untagged
+  m_TagString: Menu
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -62011,8 +62011,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b7b7344808dd0145903034339c3ce33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  menucam: {fileID: 945462281}
-  playercam: {fileID: 1968560347}
+  menucam: {fileID: 945462279}
+  player: {fileID: 1796237361}
+  camAnim: {fileID: 945462283}
+  switchCam: 0
 --- !u!43 &1306266315
 Mesh:
   m_ObjectHideFlags: 0
@@ -70187,6 +70189,11 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
+--- !u!1 &1796237361 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2388193142842158571, guid: ee69645da2b91a94b9d22d65645ac12d, type: 3}
+  m_PrefabInstance: {fileID: 630452371}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1801807652
 GameObject:
   m_ObjectHideFlags: 0
@@ -73661,11 +73668,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2f1c7054fbf8d5479880cd6bd813280, type: 3}
---- !u!20 &1968560347 stripped
-Camera:
-  m_CorrespondingSourceObject: {fileID: 225044646969810720, guid: ee69645da2b91a94b9d22d65645ac12d, type: 3}
-  m_PrefabInstance: {fileID: 630452371}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1977222137
 GameObject:
   m_ObjectHideFlags: 0
