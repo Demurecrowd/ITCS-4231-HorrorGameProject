@@ -44,8 +44,16 @@ public class FlashLightPickupScript : MonoBehaviour
                 oneTime = true;
                 pickupSound.Play();
                 flashlight.SetActive(false);
+                onCollect();
+                
             }
         }
+    }
+
+    void onCollect()
+    {
+        //Show "Press F to activate flashlight"
+        playerlight.GetComponent<Flashlight>().m_light.enabled = true;
     }
 
 }

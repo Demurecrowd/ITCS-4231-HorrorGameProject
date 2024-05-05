@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Flashlight : MonoBehaviour
 {
-    private Light m_light;
+    public Light m_light;
     public bool drainOverTime, hasLight = true;
     public float maxBrightness;
     public float minBrightness;
@@ -66,6 +66,7 @@ public class Flashlight : MonoBehaviour
         else if (hasLight == false)
         {
             ambientLight.SetActive(true);
+            m_light.enabled = false;
         }
        #endregion
 

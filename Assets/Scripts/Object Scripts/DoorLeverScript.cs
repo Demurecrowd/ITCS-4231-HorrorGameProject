@@ -52,6 +52,7 @@ public class DoorLeverScript : MonoBehaviour
                 //show UI to press E
                 if (Input.GetKeyDown(KeyCode.E))
                 {
+                    leverSound.Play();
                     leverAnim.ResetTrigger("flip");
                     leverAnim.SetTrigger("flip");
                     //Debug.Log("Pressed E and Animation trigger set");
