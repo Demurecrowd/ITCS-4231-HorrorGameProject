@@ -11,6 +11,7 @@ public class MainMenuScript : MonoBehaviour
     public Animator camAnim;
     public bool switchCam = false;
 
+    public GameObject Canvas;
 
     //Disables the fps player cam, re-enables user cursor for menu
     void Start()
@@ -50,6 +51,13 @@ public class MainMenuScript : MonoBehaviour
         // Cursor.visible = false;
         // GameObject.Find("Canvas").GetComponent<Canvas>().enabled = false;
         mainCamAnim();
+    }
+
+    //Adds functionality to quit button
+    public void Quit()
+    {
+        Debug.Log("Quit triggered");
+        Application.Quit();
     }
 
     public void mainCamAnim()
