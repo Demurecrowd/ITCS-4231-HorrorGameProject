@@ -14,10 +14,14 @@ public class DoorLeverScript : MonoBehaviour
     public GameObject doorRight;
     public GameObject doorClosed;
     public GameObject genLeverInteraction;
+    private AudioSource leverSound;
     public bool inTrig, oneTime, genOn;
     
 
-
+    void Start()
+    {
+        leverSound = GetComponent<AudioSource>();
+    }
 
      private void OnTriggerEnter(Collider other)
     {

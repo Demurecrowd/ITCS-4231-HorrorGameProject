@@ -11,11 +11,13 @@ public class FlashLightPickupScript : MonoBehaviour
     public GameObject playerlight;
     public bool inTrig;
     public bool oneTime;
+    private AudioSource pickupSound;
 
 
     private void Start()
     {
         playerlight.GetComponent<Flashlight>().hasLight = false;
+        pickupSound = GetComponent<AudioSource>();
     }
      private void OnTriggerEnter(Collider other)
     {
@@ -40,6 +42,7 @@ public class FlashLightPickupScript : MonoBehaviour
                 playerlight.GetComponent<Flashlight>().hasLight = true;
                 inTrig = false;
                 oneTime = true;
+                pickupSound.Play();
                 flashlight.SetActive(false);
             }
         }

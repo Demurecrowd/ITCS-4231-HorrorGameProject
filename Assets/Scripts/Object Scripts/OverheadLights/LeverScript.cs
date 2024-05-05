@@ -11,6 +11,10 @@ public class LeverScript : MonoBehaviour
     public GameObject lever;
     public bool inTrig;
     public bool oneTime;
+    public AudioSource pullSound;
+    public AudioSource generatorSound;
+
+    
 
 
      private void OnTriggerEnter(Collider other)
@@ -39,9 +43,10 @@ public class LeverScript : MonoBehaviour
                 leverAnim.ResetTrigger("flip");
                 leverAnim.SetTrigger("flip");
                 //Debug.Log("Pressed E and Animation trigger set");
+                pullSound.Play();
+                generatorSound.PlayDelayed(1);
                 inTrig = false;
                 oneTime = true;  
-                //Make lights function
             }
         }
     }

@@ -11,10 +11,13 @@ public class Flashlight : MonoBehaviour
     public float drainRate;
     public float rechargeRate;
     public GameObject ambientLight;
+    private AudioSource flashlightClick;
     // Start is called before the first frame update
     void Start()
     {
         m_light = GetComponent<Light>();
+        flashlightClick = GetComponent<AudioSource>();
+
     }
 
     // Update is called once per frame
@@ -56,6 +59,7 @@ public class Flashlight : MonoBehaviour
             {
                 if (m_light.intensity > minBrightness){
                     m_light.enabled = !m_light.enabled;
+                    flashlightClick.Play();
                 }
             }
         }
