@@ -20,15 +20,18 @@ public class AddEnemyScript : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            if (!oneTime){
-                inTrig = true;
-            }
-            if (oneTime)
+            if(genOn)
             {
-                inTrig = false;
-            }
+                if (!oneTime)
+                {
+                    inTrig = true;
+                }
+                if (oneTime)
+                {
+                    inTrig = false;
+                }
+            }    
         }
-        
     }
     void Update()
     {

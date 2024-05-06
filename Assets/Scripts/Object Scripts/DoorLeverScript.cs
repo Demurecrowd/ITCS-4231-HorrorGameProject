@@ -30,13 +30,17 @@ public class DoorLeverScript : MonoBehaviour
         //Debug.Log("Entered Trigger");
         if (other.tag == "Player")
         {
-            if (!oneTime){
-                inTrig = true;
-                //Debug.Log("inTrig set to True");
-            }
-            if (oneTime)
+            if(genOn)
             {
-                inTrig = false;
+                if (!oneTime)
+                {
+                    inTrig = true;
+                //Debug.Log("inTrig set to True");
+                }
+                if (oneTime)
+                {
+                    inTrig = false;
+                }
             }
             // else
             // {
@@ -47,6 +51,7 @@ public class DoorLeverScript : MonoBehaviour
     }
     void Update()
     {
+        genOn = genLeverInteraction.GetComponent<LeverScript>().genOn;
         if (inTrig)
         {
             if(genLeverInteraction.GetComponent<LeverScript>().oneTime == true)

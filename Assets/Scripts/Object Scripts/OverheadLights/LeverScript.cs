@@ -11,6 +11,7 @@ public class LeverScript : MonoBehaviour
     public GameObject lever;
     public bool inTrig;
     public bool oneTime;
+    public bool genOn;
     public AudioSource pullSound;
     public AudioSource generatorSound;
 
@@ -45,6 +46,7 @@ public class LeverScript : MonoBehaviour
                 //Debug.Log("Pressed E and Animation trigger set");
                 pullSound.Play();
                 generatorSound.PlayDelayed(1);
+                genOn = true;
                 inTrig = false;
                 oneTime = true;  
             }
