@@ -14,5 +14,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level_3.unity
     guid: 832748c577a45f64e9521fdb54a05b1b
+  - enabled: 1
+    path: Assets/Scenes/Level_4.unity
+    guid: ea3a75c67e33b6742944595a371f759f
   m_configObjects:
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: c78e0c6d7afc7974c9e3d982753d9b8b, type: 2}
