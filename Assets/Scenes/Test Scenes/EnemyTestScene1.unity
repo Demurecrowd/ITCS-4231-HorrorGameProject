@@ -4104,10 +4104,6 @@ PrefabInstance:
       propertyPath: destinations.Array.data[4]
       value: 
       objectReference: {fileID: 1006429084}
-    - target: {fileID: 1779060437323048716, guid: dffe442c17aebec409cdaee623ae79ae, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6271646961435536220, guid: dffe442c17aebec409cdaee623ae79ae, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.421
@@ -4152,8 +4148,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy2
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 1779060437323048716, guid: dffe442c17aebec409cdaee623ae79ae, type: 3}
+    - target: {fileID: 6648031041153249766, guid: dffe442c17aebec409cdaee623ae79ae, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
