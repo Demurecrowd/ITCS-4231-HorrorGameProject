@@ -10,11 +10,13 @@ public class DoorLeverScript : MonoBehaviour
     public Animator leverAnim;
     public GameObject lever;
     public GameObject statue;
+    public GameObject mainFrameGlow;
     public GameObject doorLeft;
     public GameObject doorRight;
     public GameObject doorClosed;
     public GameObject genLeverInteraction;
-    private AudioSource leverSound;
+    public AudioSource leverSound;
+    public AudioSource ElectricitySound;
     public bool inTrig, oneTime, genOn;
     
 
@@ -60,6 +62,8 @@ public class DoorLeverScript : MonoBehaviour
                     doorClosed.SetActive(false);
                     doorRight.SetActive(true);
                     doorLeft.SetActive(true);
+                    mainFrameGlow.SetActive(true);
+                    ElectricitySound.Play();
                     inTrig = false;
                     oneTime = true;  
                     //Make lights function
