@@ -182,15 +182,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 37575340872a5594f849678bb3933598, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.27017498
+      value: -12.824607
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 37575340872a5594f849678bb3933598, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.0905805
+      value: 3.03
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 37575340872a5594f849678bb3933598, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 17.144491
+      value: 11.551489
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 37575340872a5594f849678bb3933598, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1445,7 +1445,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 100
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -1780,17 +1780,14 @@ MonoBehaviour:
   destinations:
   - {fileID: 0}
   - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   aiAnim: {fileID: 4434400932612543461}
   walkSpeed: 1
-  chaseSpeed: 5
+  chaseSpeed: 5.5
   minIdleTime: 2
   maxIdleTime: 9
   idleTime: 0
-  sightDistance: 18
-  catchDistance: 3
+  sightDistance: 20
+  catchDistance: 2
   chaseTime: 0
   minChaseTime: 5
   maxChaseTime: 10
@@ -1798,9 +1795,9 @@ MonoBehaviour:
   walking: 0
   chasing: 0
   player: {fileID: 0}
-  destinationAmount: 6
+  destinationAmount: 3
   rayCastOffset: {x: 0.5, y: 0, z: 0}
-  deathScene: EnemyTestScene1
+  deathScene: Level_2
 --- !u!195 &8845207677689303279
 NavMeshAgent:
   m_ObjectHideFlags: 0

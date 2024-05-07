@@ -35,6 +35,7 @@ public class AddEnemyScript : MonoBehaviour
     }
     void Update()
     {
+        genOn = genLeverInteraction.GetComponent<LeverScript>().genOn;
         if (inTrig)
         {
             if(genLeverInteraction.GetComponent<LeverScript>().oneTime == true)
